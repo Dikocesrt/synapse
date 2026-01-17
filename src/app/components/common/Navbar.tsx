@@ -3,13 +3,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation"; // ← Tambah import
 
 export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
+
+    const isActive = (path: string) => pathname === path;
 
     return (
         <>
@@ -71,13 +75,21 @@ export default function Navbar() {
                     <div className="flex flex-col px-4 pb-4 gap-2">
                         <Link
                             href="/"
-                            className="text-white font-poppins font-medium py-3 px-4 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
+                            className={`text-white font-poppins font-medium py-3 px-4 rounded-lg transition-colors ${
+                                isActive("/")
+                                    ? "bg-white/20"
+                                    : "bg-white/10 hover:bg-white/20"
+                            }`}
                         >
                             Beranda
                         </Link>
                         <Link
                             href="/about"
-                            className="text-white font-poppins font-medium py-3 px-4 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
+                            className={`text-white font-poppins font-medium py-3 px-4 rounded-lg transition-colors ${
+                                isActive("/about")
+                                    ? "bg-white/20"
+                                    : "bg-white/10 hover:bg-white/20"
+                            }`}
                         >
                             Tentang
                         </Link>
@@ -108,13 +120,19 @@ export default function Navbar() {
                 <div className="flex flex-row gap-8">
                     <Link
                         href="/"
-                        className="text-white font-poppins font-semibold hover:text-white/80 transition-colors border-b-2 border-white pb-1"
+                        className={`text-white font-poppins font-semibold hover:text-white/80 transition-colors ${
+                            isActive("/") ? "border-b-2 border-white pb-1" : ""
+                        }`}
                     >
                         Beranda
                     </Link>
                     <Link
                         href="/about"
-                        className="text-white font-poppins font-semibold hover:text-white/80 transition-colors"
+                        className={`text-white font-poppins font-semibold hover:text-white/80 transition-colors ${
+                            isActive("/about")
+                                ? "border-b-2 border-white pb-1"
+                                : ""
+                        }`}
                     >
                         Tentang
                     </Link>
