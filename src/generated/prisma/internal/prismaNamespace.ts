@@ -389,8 +389,8 @@ export const ModelName = {
   evaluations: 'evaluations',
   external_learning_resources: 'external_learning_resources',
   instructors: 'instructors',
-  learning_material_resources: 'learning_material_resources',
-  learning_materials: 'learning_materials'
+  course_material_resources: 'course_material_resources',
+  course_materials: 'course_materials'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -406,7 +406,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "course_outcomes" | "courses" | "evaluations" | "external_learning_resources" | "instructors" | "learning_material_resources" | "learning_materials"
+    modelProps: "course_outcomes" | "courses" | "evaluations" | "external_learning_resources" | "instructors" | "course_material_resources" | "course_materials"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -780,151 +780,151 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    learning_material_resources: {
-      payload: Prisma.$learning_material_resourcesPayload<ExtArgs>
-      fields: Prisma.learning_material_resourcesFieldRefs
+    course_material_resources: {
+      payload: Prisma.$course_material_resourcesPayload<ExtArgs>
+      fields: Prisma.course_material_resourcesFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.learning_material_resourcesFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_material_resourcesPayload> | null
+          args: Prisma.course_material_resourcesFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_material_resourcesPayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.learning_material_resourcesFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_material_resourcesPayload>
+          args: Prisma.course_material_resourcesFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_material_resourcesPayload>
         }
         findFirst: {
-          args: Prisma.learning_material_resourcesFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_material_resourcesPayload> | null
+          args: Prisma.course_material_resourcesFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_material_resourcesPayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.learning_material_resourcesFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_material_resourcesPayload>
+          args: Prisma.course_material_resourcesFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_material_resourcesPayload>
         }
         findMany: {
-          args: Prisma.learning_material_resourcesFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_material_resourcesPayload>[]
+          args: Prisma.course_material_resourcesFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_material_resourcesPayload>[]
         }
         create: {
-          args: Prisma.learning_material_resourcesCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_material_resourcesPayload>
+          args: Prisma.course_material_resourcesCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_material_resourcesPayload>
         }
         createMany: {
-          args: Prisma.learning_material_resourcesCreateManyArgs<ExtArgs>
+          args: Prisma.course_material_resourcesCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         createManyAndReturn: {
-          args: Prisma.learning_material_resourcesCreateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_material_resourcesPayload>[]
+          args: Prisma.course_material_resourcesCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_material_resourcesPayload>[]
         }
         delete: {
-          args: Prisma.learning_material_resourcesDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_material_resourcesPayload>
+          args: Prisma.course_material_resourcesDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_material_resourcesPayload>
         }
         update: {
-          args: Prisma.learning_material_resourcesUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_material_resourcesPayload>
+          args: Prisma.course_material_resourcesUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_material_resourcesPayload>
         }
         deleteMany: {
-          args: Prisma.learning_material_resourcesDeleteManyArgs<ExtArgs>
+          args: Prisma.course_material_resourcesDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.learning_material_resourcesUpdateManyArgs<ExtArgs>
+          args: Prisma.course_material_resourcesUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateManyAndReturn: {
-          args: Prisma.learning_material_resourcesUpdateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_material_resourcesPayload>[]
+          args: Prisma.course_material_resourcesUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_material_resourcesPayload>[]
         }
         upsert: {
-          args: Prisma.learning_material_resourcesUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_material_resourcesPayload>
+          args: Prisma.course_material_resourcesUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_material_resourcesPayload>
         }
         aggregate: {
-          args: Prisma.Learning_material_resourcesAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateLearning_material_resources>
+          args: Prisma.Course_material_resourcesAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCourse_material_resources>
         }
         groupBy: {
-          args: Prisma.learning_material_resourcesGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.Learning_material_resourcesGroupByOutputType>[]
+          args: Prisma.course_material_resourcesGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Course_material_resourcesGroupByOutputType>[]
         }
         count: {
-          args: Prisma.learning_material_resourcesCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.Learning_material_resourcesCountAggregateOutputType> | number
+          args: Prisma.course_material_resourcesCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Course_material_resourcesCountAggregateOutputType> | number
         }
       }
     }
-    learning_materials: {
-      payload: Prisma.$learning_materialsPayload<ExtArgs>
-      fields: Prisma.learning_materialsFieldRefs
+    course_materials: {
+      payload: Prisma.$course_materialsPayload<ExtArgs>
+      fields: Prisma.course_materialsFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.learning_materialsFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_materialsPayload> | null
+          args: Prisma.course_materialsFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_materialsPayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.learning_materialsFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_materialsPayload>
+          args: Prisma.course_materialsFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_materialsPayload>
         }
         findFirst: {
-          args: Prisma.learning_materialsFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_materialsPayload> | null
+          args: Prisma.course_materialsFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_materialsPayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.learning_materialsFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_materialsPayload>
+          args: Prisma.course_materialsFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_materialsPayload>
         }
         findMany: {
-          args: Prisma.learning_materialsFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_materialsPayload>[]
+          args: Prisma.course_materialsFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_materialsPayload>[]
         }
         create: {
-          args: Prisma.learning_materialsCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_materialsPayload>
+          args: Prisma.course_materialsCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_materialsPayload>
         }
         createMany: {
-          args: Prisma.learning_materialsCreateManyArgs<ExtArgs>
+          args: Prisma.course_materialsCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         createManyAndReturn: {
-          args: Prisma.learning_materialsCreateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_materialsPayload>[]
+          args: Prisma.course_materialsCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_materialsPayload>[]
         }
         delete: {
-          args: Prisma.learning_materialsDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_materialsPayload>
+          args: Prisma.course_materialsDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_materialsPayload>
         }
         update: {
-          args: Prisma.learning_materialsUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_materialsPayload>
+          args: Prisma.course_materialsUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_materialsPayload>
         }
         deleteMany: {
-          args: Prisma.learning_materialsDeleteManyArgs<ExtArgs>
+          args: Prisma.course_materialsDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.learning_materialsUpdateManyArgs<ExtArgs>
+          args: Prisma.course_materialsUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateManyAndReturn: {
-          args: Prisma.learning_materialsUpdateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_materialsPayload>[]
+          args: Prisma.course_materialsUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_materialsPayload>[]
         }
         upsert: {
-          args: Prisma.learning_materialsUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_materialsPayload>
+          args: Prisma.course_materialsUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$course_materialsPayload>
         }
         aggregate: {
-          args: Prisma.Learning_materialsAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateLearning_materials>
+          args: Prisma.Course_materialsAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCourse_materials>
         }
         groupBy: {
-          args: Prisma.learning_materialsGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.Learning_materialsGroupByOutputType>[]
+          args: Prisma.course_materialsGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Course_materialsGroupByOutputType>[]
         }
         count: {
-          args: Prisma.learning_materialsCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.Learning_materialsCountAggregateOutputType> | number
+          args: Prisma.course_materialsCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Course_materialsCountAggregateOutputType> | number
         }
       }
     }
@@ -1025,20 +1025,20 @@ export const InstructorsScalarFieldEnum = {
 export type InstructorsScalarFieldEnum = (typeof InstructorsScalarFieldEnum)[keyof typeof InstructorsScalarFieldEnum]
 
 
-export const Learning_material_resourcesScalarFieldEnum = {
+export const Course_material_resourcesScalarFieldEnum = {
   id: 'id',
   icon_url: 'icon_url',
   name: 'name',
   link: 'link',
-  learning_material_id: 'learning_material_id',
+  course_material_id: 'course_material_id',
   created_at: 'created_at',
   updated_at: 'updated_at'
 } as const
 
-export type Learning_material_resourcesScalarFieldEnum = (typeof Learning_material_resourcesScalarFieldEnum)[keyof typeof Learning_material_resourcesScalarFieldEnum]
+export type Course_material_resourcesScalarFieldEnum = (typeof Course_material_resourcesScalarFieldEnum)[keyof typeof Course_material_resourcesScalarFieldEnum]
 
 
-export const Learning_materialsScalarFieldEnum = {
+export const Course_materialsScalarFieldEnum = {
   id: 'id',
   name: 'name',
   description: 'description',
@@ -1049,7 +1049,7 @@ export const Learning_materialsScalarFieldEnum = {
   updated_at: 'updated_at'
 } as const
 
-export type Learning_materialsScalarFieldEnum = (typeof Learning_materialsScalarFieldEnum)[keyof typeof Learning_materialsScalarFieldEnum]
+export type Course_materialsScalarFieldEnum = (typeof Course_materialsScalarFieldEnum)[keyof typeof Course_materialsScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1237,8 +1237,8 @@ export type GlobalOmitConfig = {
   evaluations?: Prisma.evaluationsOmit
   external_learning_resources?: Prisma.external_learning_resourcesOmit
   instructors?: Prisma.instructorsOmit
-  learning_material_resources?: Prisma.learning_material_resourcesOmit
-  learning_materials?: Prisma.learning_materialsOmit
+  course_material_resources?: Prisma.course_material_resourcesOmit
+  course_materials?: Prisma.course_materialsOmit
 }
 
 /* Types for Logging */

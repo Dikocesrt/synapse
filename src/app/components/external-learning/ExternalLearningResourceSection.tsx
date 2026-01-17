@@ -1,4 +1,4 @@
-import ExternalLearningResourceCard from "./ExternalLearningResourceCard";
+import ExternalLearningResourceCard from "./ExternalLearningResourceItem";
 import { externalLearningResourceService } from "@/src/services/external-learning-resource_service";
 
 export default async function ExternalLearningResourceSection() {

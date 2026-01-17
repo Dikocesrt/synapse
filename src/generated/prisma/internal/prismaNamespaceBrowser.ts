@@ -56,8 +56,8 @@ export const ModelName = {
   evaluations: 'evaluations',
   external_learning_resources: 'external_learning_resources',
   instructors: 'instructors',
-  learning_material_resources: 'learning_material_resources',
-  learning_materials: 'learning_materials'
+  course_material_resources: 'course_material_resources',
+  course_materials: 'course_materials'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -134,20 +134,20 @@ export const InstructorsScalarFieldEnum = {
 export type InstructorsScalarFieldEnum = (typeof InstructorsScalarFieldEnum)[keyof typeof InstructorsScalarFieldEnum]
 
 
-export const Learning_material_resourcesScalarFieldEnum = {
+export const Course_material_resourcesScalarFieldEnum = {
   id: 'id',
   icon_url: 'icon_url',
   name: 'name',
   link: 'link',
-  learning_material_id: 'learning_material_id',
+  course_material_id: 'course_material_id',
   created_at: 'created_at',
   updated_at: 'updated_at'
 } as const
 
-export type Learning_material_resourcesScalarFieldEnum = (typeof Learning_material_resourcesScalarFieldEnum)[keyof typeof Learning_material_resourcesScalarFieldEnum]
+export type Course_material_resourcesScalarFieldEnum = (typeof Course_material_resourcesScalarFieldEnum)[keyof typeof Course_material_resourcesScalarFieldEnum]
 
 
-export const Learning_materialsScalarFieldEnum = {
+export const Course_materialsScalarFieldEnum = {
   id: 'id',
   name: 'name',
   description: 'description',
@@ -158,7 +158,7 @@ export const Learning_materialsScalarFieldEnum = {
   updated_at: 'updated_at'
 } as const
 
-export type Learning_materialsScalarFieldEnum = (typeof Learning_materialsScalarFieldEnum)[keyof typeof Learning_materialsScalarFieldEnum]
+export type Course_materialsScalarFieldEnum = (typeof Course_materialsScalarFieldEnum)[keyof typeof Course_materialsScalarFieldEnum]
 
 
 export const SortOrder = {

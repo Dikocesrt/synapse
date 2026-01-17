@@ -219,7 +219,7 @@ export type instructorsScalarWhereWithAggregatesInput = {
 export type instructorsCreateInput = {
   id: string
   full_name: string
-  created_at: Date | string
+  created_at?: Date | string
   updated_at?: Date | string | null
   courses?: Prisma.coursesCreateNestedManyWithoutInstructorsInput
 }
@@ -227,7 +227,7 @@ export type instructorsCreateInput = {
 export type instructorsUncheckedCreateInput = {
   id: string
   full_name: string
-  created_at: Date | string
+  created_at?: Date | string
   updated_at?: Date | string | null
   courses?: Prisma.coursesUncheckedCreateNestedManyWithoutInstructorsInput
 }
@@ -251,7 +251,7 @@ export type instructorsUncheckedUpdateInput = {
 export type instructorsCreateManyInput = {
   id: string
   full_name: string
-  created_at: Date | string
+  created_at?: Date | string
   updated_at?: Date | string | null
 }
 
@@ -314,14 +314,14 @@ export type instructorsUpdateOneWithoutCoursesNestedInput = {
 export type instructorsCreateWithoutCoursesInput = {
   id: string
   full_name: string
-  created_at: Date | string
+  created_at?: Date | string
   updated_at?: Date | string | null
 }
 
 export type instructorsUncheckedCreateWithoutCoursesInput = {
   id: string
   full_name: string
-  created_at: Date | string
+  created_at?: Date | string
   updated_at?: Date | string | null
 }
 

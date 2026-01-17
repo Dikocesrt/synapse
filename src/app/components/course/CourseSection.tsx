@@ -1,4 +1,4 @@
-import CourseCard from "./CourseCard";
+import CourseCard from "./CourseItem";
 import { courseService } from "@/src/services/course_service";
 
 export default async function CourseSection() {

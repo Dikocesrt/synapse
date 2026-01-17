@@ -231,7 +231,7 @@ export type course_outcomesScalarWhereWithAggregatesInput = {
 export type course_outcomesCreateInput = {
   id: string
   name: string
-  created_at: Date | string
+  created_at?: Date | string
   updated_at?: Date | string | null
   courses: Prisma.coursesCreateNestedOneWithoutCourse_outcomesInput
 }
@@ -240,7 +240,7 @@ export type course_outcomesUncheckedCreateInput = {
   id: string
   name: string
   course_id: string
-  created_at: Date | string
+  created_at?: Date | string
   updated_at?: Date | string | null
 }
 
@@ -264,7 +264,7 @@ export type course_outcomesCreateManyInput = {
   id: string
   name: string
   course_id: string
-  created_at: Date | string
+  created_at?: Date | string
   updated_at?: Date | string | null
 }
 
@@ -374,14 +374,14 @@ export type course_outcomesUncheckedUpdateManyWithoutCoursesNestedInput = {
 export type course_outcomesCreateWithoutCoursesInput = {
   id: string
   name: string
-  created_at: Date | string
+  created_at?: Date | string
   updated_at?: Date | string | null
 }
 
 export type course_outcomesUncheckedCreateWithoutCoursesInput = {
   id: string
   name: string
-  created_at: Date | string
+  created_at?: Date | string
   updated_at?: Date | string | null
 }
 
@@ -425,7 +425,7 @@ export type course_outcomesScalarWhereInput = {
 export type course_outcomesCreateManyCoursesInput = {
   id: string
   name: string
-  created_at: Date | string
+  created_at?: Date | string
   updated_at?: Date | string | null
 }
 

@@ -1,5 +1,5 @@
 import { prisma } from "../lib/prisma";
-import { Course } from "../types/course";
+import { Course } from "../types/course_type";
 
 export const courseService = {
     async getAll(): Promise<Course[]> {
@@ -16,9 +16,14 @@ export const courseService = {
                 id,
             },
             include: {
-                instructor: {
-                    select: {
-                        full_name: true,
+                instructors: true,
+                course_outcomes: true,
+                course_materials: {
+                    include: {
+                        course_material_resources: true,
+                    },
+                    orderBy: {
+                        from_meeting: "asc",
                     },
                 },
             },

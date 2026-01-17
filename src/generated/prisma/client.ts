@@ -65,12 +65,12 @@ export type external_learning_resources = Prisma.external_learning_resourcesMode
  */
 export type instructors = Prisma.instructorsModel
 /**
- * Model learning_material_resources
+ * Model course_material_resources
  * 
  */
-export type learning_material_resources = Prisma.learning_material_resourcesModel
+export type course_material_resources = Prisma.course_material_resourcesModel
 /**
- * Model learning_materials
+ * Model course_materials
  * 
  */
-export type learning_materials = Prisma.learning_materialsModel
+export type course_materials = Prisma.course_materialsModel
