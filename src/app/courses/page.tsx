@@ -18,8 +18,8 @@ export default function Page() {
 
             {/* Back */}
             <div className="text-center mt-10">
-                <a
-                    href="index.html"
+                <Link
+                    href="/"
                     className="inline-flex items-center gap-2 text-purpple font-semibold hover:text-purpple/80 transition-colors"
                 >
                     <svg
@@ -36,7 +36,7 @@ export default function Page() {
                         />
                     </svg>
                     Kembali ke Beranda
-                </a>
+                </Link>
             </div>
         </main>
     );
