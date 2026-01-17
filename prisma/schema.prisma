@@ -1,0 +1,96 @@
+generator client {
+  provider        = "prisma-client"
+  output          = "../src/generated/prisma"
+  previewFeatures = ["multiSchema"]
+}
+
+datasource db {
+  provider = "postgresql"
+  schemas  = ["public"]
+}
+
+model course_outcomes {
+  id         String    @id
+  name       String
+  course_id  String
+  created_at DateTime  @db.Timestamptz(6)
+  updated_at DateTime? @db.Timestamptz(6)
+  courses    courses   @relation(fields: [course_id], references: [id], onDelete: Cascade, map: "fk_course_outcomes_course")
+
+  @@schema("public")
+}
+
+model courses {
+  id                 String               @id
+  name               String
+  credits            Int
+  description        String
+  instructor_id      String?
+  created_at         DateTime             @db.Timestamptz(6)
+  updated_at         DateTime?            @db.Timestamptz(6)
+  course_outcomes    course_outcomes[]
+  instructors        instructors?         @relation(fields: [instructor_id], references: [id], map: "fk_courses_instructor")
+  learning_materials learning_materials[]
+
+  @@schema("public")
+}
+
+model evaluations {
+  id          String    @id
+  title       String
+  description String
+  link        String
+  created_at  DateTime  @db.Timestamptz(6)
+  updated_at  DateTime? @db.Timestamptz(6)
+
+  @@schema("public")
+}
+
+model external_learning_resources {
+  id         String    @id
+  icon_url   String
+  name       String
+  link       String
+  created_at DateTime  @db.Timestamptz(6)
+  updated_at DateTime? @db.Timestamptz(6)
+
+  @@schema("public")
+}
+
+model instructors {
+  id         String    @id
+  full_name  String
+  created_at DateTime  @db.Timestamptz(6)
+  updated_at DateTime? @db.Timestamptz(6)
+  courses    courses[]
+
+  @@schema("public")
+}
+
+model learning_material_resources {
+  id                   String             @id
+  icon_url             String
+  name                 String
+  link                 String
+  learning_material_id String
+  created_at           DateTime           @db.Timestamptz(6)
+  updated_at           DateTime?          @db.Timestamptz(6)
+  learning_materials   learning_materials @relation(fields: [learning_material_id], references: [id], onDelete: Cascade, map: "fk_learning_material_resources_material")
+
+  @@schema("public")
+}
+
+model learning_materials {
+  id                          String                        @id
+  name                        String
+  description                 String
+  from_meeting                Int
+  to_meeting                  Int
+  course_id                   String
+  created_at                  DateTime                      @db.Timestamptz(6)
+  updated_at                  DateTime?                     @db.Timestamptz(6)
+  learning_material_resources learning_material_resources[]
+  courses                     courses                       @relation(fields: [course_id], references: [id], onDelete: Cascade, map: "fk_learning_materials_course")
+
+  @@schema("public")
+}
