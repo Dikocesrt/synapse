@@ -77,7 +77,7 @@ export default function Page() {
                         </p>
                         {/* Button */}
                         <Link
-                            href="/pembelajaran"
+                            href="/courses"
                             className="inline-flex items-center justify-center bg-gradient-to-br from-purpple to-purpple/80 text-white font-poppins font-semibold py-3 px-6 rounded-[12px] hover:bg-purpple/90 transition-colors w-fit"
                         >
                             Mulai Belajar
