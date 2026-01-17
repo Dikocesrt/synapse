@@ -39,9 +39,11 @@ model evaluations {
   id          String    @id
   title       String
   description String
-  link        String
+  link        String?
   created_at  DateTime  @default(now()) @db.Timestamptz(6)
   updated_at  DateTime? @db.Timestamptz(6)
+  button_text String?
+  is_active   Boolean   @default(true)
 
   @@schema("public")
 }

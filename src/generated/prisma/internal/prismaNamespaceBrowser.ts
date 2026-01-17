@@ -106,7 +106,9 @@ export const EvaluationsScalarFieldEnum = {
   description: 'description',
   link: 'link',
   created_at: 'created_at',
-  updated_at: 'updated_at'
+  updated_at: 'updated_at',
+  button_text: 'button_text',
+  is_active: 'is_active'
 } as const
 
 export type EvaluationsScalarFieldEnum = (typeof EvaluationsScalarFieldEnum)[keyof typeof EvaluationsScalarFieldEnum]

@@ -31,6 +31,8 @@ export type EvaluationsMinAggregateOutputType = {
   link: string | null
   created_at: Date | null
   updated_at: Date | null
+  button_text: string | null
+  is_active: boolean | null
 }
 
 export type EvaluationsMaxAggregateOutputType = {
@@ -40,6 +42,8 @@ export type EvaluationsMaxAggregateOutputType = {
   link: string | null
   created_at: Date | null
   updated_at: Date | null
+  button_text: string | null
+  is_active: boolean | null
 }
 
 export type EvaluationsCountAggregateOutputType = {
@@ -49,6 +53,8 @@ export type EvaluationsCountAggregateOutputType = {
   link: number
   created_at: number
   updated_at: number
+  button_text: number
+  is_active: number
   _all: number
 }
 
@@ -60,6 +66,8 @@ export type EvaluationsMinAggregateInputType = {
   link?: true
   created_at?: true
   updated_at?: true
+  button_text?: true
+  is_active?: true
 }
 
 export type EvaluationsMaxAggregateInputType = {
@@ -69,6 +77,8 @@ export type EvaluationsMaxAggregateInputType = {
   link?: true
   created_at?: true
   updated_at?: true
+  button_text?: true
+  is_active?: true
 }
 
 export type EvaluationsCountAggregateInputType = {
@@ -78,6 +88,8 @@ export type EvaluationsCountAggregateInputType = {
   link?: true
   created_at?: true
   updated_at?: true
+  button_text?: true
+  is_active?: true
   _all?: true
 }
 
@@ -157,9 +169,11 @@ export type EvaluationsGroupByOutputType = {
   id: string
   title: string
   description: string
-  link: string
+  link: string | null
   created_at: Date
   updated_at: Date | null
+  button_text: string | null
+  is_active: boolean
   _count: EvaluationsCountAggregateOutputType | null
   _min: EvaluationsMinAggregateOutputType | null
   _max: EvaluationsMaxAggregateOutputType | null
@@ -187,18 +201,22 @@ export type evaluationsWhereInput = {
   id?: Prisma.StringFilter<"evaluations"> | string
   title?: Prisma.StringFilter<"evaluations"> | string
   description?: Prisma.StringFilter<"evaluations"> | string
-  link?: Prisma.StringFilter<"evaluations"> | string
+  link?: Prisma.StringNullableFilter<"evaluations"> | string | null
   created_at?: Prisma.DateTimeFilter<"evaluations"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"evaluations"> | Date | string | null
+  button_text?: Prisma.StringNullableFilter<"evaluations"> | string | null
+  is_active?: Prisma.BoolFilter<"evaluations"> | boolean
 }
 
 export type evaluationsOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
   description?: Prisma.SortOrder
-  link?: Prisma.SortOrder
+  link?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
+  button_text?: Prisma.SortOrderInput | Prisma.SortOrder
+  is_active?: Prisma.SortOrder
 }
 
 export type evaluationsWhereUniqueInput = Prisma.AtLeast<{
@@ -208,18 +226,22 @@ export type evaluationsWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.evaluationsWhereInput | Prisma.evaluationsWhereInput[]
   title?: Prisma.StringFilter<"evaluations"> | string
   description?: Prisma.StringFilter<"evaluations"> | string
-  link?: Prisma.StringFilter<"evaluations"> | string
+  link?: Prisma.StringNullableFilter<"evaluations"> | string | null
   created_at?: Prisma.DateTimeFilter<"evaluations"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"evaluations"> | Date | string | null
+  button_text?: Prisma.StringNullableFilter<"evaluations"> | string | null
+  is_active?: Prisma.BoolFilter<"evaluations"> | boolean
 }, "id">
 
 export type evaluationsOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
   description?: Prisma.SortOrder
-  link?: Prisma.SortOrder
+  link?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
+  button_text?: Prisma.SortOrderInput | Prisma.SortOrder
+  is_active?: Prisma.SortOrder
   _count?: Prisma.evaluationsCountOrderByAggregateInput
   _max?: Prisma.evaluationsMaxOrderByAggregateInput
   _min?: Prisma.evaluationsMinOrderByAggregateInput
@@ -232,72 +254,88 @@ export type evaluationsScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"evaluations"> | string
   title?: Prisma.StringWithAggregatesFilter<"evaluations"> | string
   description?: Prisma.StringWithAggregatesFilter<"evaluations"> | string
-  link?: Prisma.StringWithAggregatesFilter<"evaluations"> | string
+  link?: Prisma.StringNullableWithAggregatesFilter<"evaluations"> | string | null
   created_at?: Prisma.DateTimeWithAggregatesFilter<"evaluations"> | Date | string
   updated_at?: Prisma.DateTimeNullableWithAggregatesFilter<"evaluations"> | Date | string | null
+  button_text?: Prisma.StringNullableWithAggregatesFilter<"evaluations"> | string | null
+  is_active?: Prisma.BoolWithAggregatesFilter<"evaluations"> | boolean
 }
 
 export type evaluationsCreateInput = {
   id: string
   title: string
   description: string
-  link: string
+  link?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  button_text?: string | null
+  is_active?: boolean
 }
 
 export type evaluationsUncheckedCreateInput = {
   id: string
   title: string
   description: string
-  link: string
+  link?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  button_text?: string | null
+  is_active?: boolean
 }
 
 export type evaluationsUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  link?: Prisma.StringFieldUpdateOperationsInput | string
+  link?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  button_text?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  is_active?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
 
 export type evaluationsUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  link?: Prisma.StringFieldUpdateOperationsInput | string
+  link?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  button_text?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  is_active?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
 
 export type evaluationsCreateManyInput = {
   id: string
   title: string
   description: string
-  link: string
+  link?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  button_text?: string | null
+  is_active?: boolean
 }
 
 export type evaluationsUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  link?: Prisma.StringFieldUpdateOperationsInput | string
+  link?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  button_text?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  is_active?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
 
 export type evaluationsUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   title?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.StringFieldUpdateOperationsInput | string
-  link?: Prisma.StringFieldUpdateOperationsInput | string
+  link?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  button_text?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  is_active?: Prisma.BoolFieldUpdateOperationsInput | boolean
 }
 
 export type evaluationsCountOrderByAggregateInput = {
@@ -307,6 +345,8 @@ export type evaluationsCountOrderByAggregateInput = {
   link?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
+  button_text?: Prisma.SortOrder
+  is_active?: Prisma.SortOrder
 }
 
 export type evaluationsMaxOrderByAggregateInput = {
@@ -316,6 +356,8 @@ export type evaluationsMaxOrderByAggregateInput = {
   link?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
+  button_text?: Prisma.SortOrder
+  is_active?: Prisma.SortOrder
 }
 
 export type evaluationsMinOrderByAggregateInput = {
@@ -325,6 +367,12 @@ export type evaluationsMinOrderByAggregateInput = {
   link?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
+  button_text?: Prisma.SortOrder
+  is_active?: Prisma.SortOrder
+}
+
+export type BoolFieldUpdateOperationsInput = {
+  set?: boolean
 }
 
 
@@ -336,6 +384,8 @@ export type evaluationsSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   link?: boolean
   created_at?: boolean
   updated_at?: boolean
+  button_text?: boolean
+  is_active?: boolean
 }, ExtArgs["result"]["evaluations"]>
 
 export type evaluationsSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -345,6 +395,8 @@ export type evaluationsSelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
   link?: boolean
   created_at?: boolean
   updated_at?: boolean
+  button_text?: boolean
+  is_active?: boolean
 }, ExtArgs["result"]["evaluations"]>
 
 export type evaluationsSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -354,6 +406,8 @@ export type evaluationsSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
   link?: boolean
   created_at?: boolean
   updated_at?: boolean
+  button_text?: boolean
+  is_active?: boolean
 }, ExtArgs["result"]["evaluations"]>
 
 export type evaluationsSelectScalar = {
@@ -363,9 +417,11 @@ export type evaluationsSelectScalar = {
   link?: boolean
   created_at?: boolean
   updated_at?: boolean
+  button_text?: boolean
+  is_active?: boolean
 }
 
-export type evaluationsOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "description" | "link" | "created_at" | "updated_at", ExtArgs["result"]["evaluations"]>
+export type evaluationsOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "description" | "link" | "created_at" | "updated_at" | "button_text" | "is_active", ExtArgs["result"]["evaluations"]>
 
 export type $evaluationsPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "evaluations"
@@ -374,9 +430,11 @@ export type $evaluationsPayload<ExtArgs extends runtime.Types.Extensions.Interna
     id: string
     title: string
     description: string
-    link: string
+    link: string | null
     created_at: Date
     updated_at: Date | null
+    button_text: string | null
+    is_active: boolean
   }, ExtArgs["result"]["evaluations"]>
   composites: {}
 }
@@ -806,6 +864,8 @@ export interface evaluationsFieldRefs {
   readonly link: Prisma.FieldRef<"evaluations", 'String'>
   readonly created_at: Prisma.FieldRef<"evaluations", 'DateTime'>
   readonly updated_at: Prisma.FieldRef<"evaluations", 'DateTime'>
+  readonly button_text: Prisma.FieldRef<"evaluations", 'String'>
+  readonly is_active: Prisma.FieldRef<"evaluations", 'Boolean'>
 }
     
 

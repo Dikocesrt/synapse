@@ -997,7 +997,9 @@ export const EvaluationsScalarFieldEnum = {
   description: 'description',
   link: 'link',
   created_at: 'created_at',
-  updated_at: 'updated_at'
+  updated_at: 'updated_at',
+  button_text: 'button_text',
+  is_active: 'is_active'
 } as const
 
 export type EvaluationsScalarFieldEnum = (typeof EvaluationsScalarFieldEnum)[keyof typeof EvaluationsScalarFieldEnum]
@@ -1121,6 +1123,13 @@ export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'In
  * Reference to a field of type 'Int[]'
  */
 export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Boolean'
+ */
+export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
