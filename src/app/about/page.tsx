@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Page() {
     return (
         <main className=" mx-auto my-10 px-8">
@@ -450,12 +452,12 @@ export default function Page() {
                         Jelajahi materi neuroanestesi dan persiapkan diri untuk
                         praktikum klinik
                     </p>
-                    <a
-                        href="index.html"
+                    <Link
+                        href="/"
                         className="inline-block bg-white text-purpple font-semibold py-3 px-8 rounded-full hover:bg-white/90 hover:shadow-lg transition-all duration-300"
                     >
                         Kembali ke Beranda
-                    </a>
+                    </Link>
                 </div>
             </div>
         </main>
