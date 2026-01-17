@@ -23,15 +23,15 @@ export default function Navbar() {
                     {/* Logo & Brand */}
                     <div className="flex flex-row items-center gap-3">
                         <Image
-                            src="/logo.png"
+                            src="/logo.jpg"
                             alt="Synapse Logo"
-                            width={32}
-                            height={32}
-                            className="w-8 h-8 rounded-lg"
+                            width={120}
+                            height={48}
+                            className="h-10 w-auto rounded-lg object-contain"
                         />
-                        <p className="text-xl text-white font-poppins font-bold">
+                        {/* <p className="text-xl text-white font-poppins font-bold">
                             Synapse
-                        </p>
+                        </p> */}
                     </div>
 
                     {/* Hamburger Button */}
@@ -101,13 +101,13 @@ export default function Navbar() {
             <nav className="hidden lg:flex bg-gradient-to-br from-purpple to-purpple/80 justify-between items-center py-5 px-8">
                 <div className="flex flex-row items-center gap-4">
                     <Image
-                        src="/logo.png"
+                        src="/logo.jpg"
                         alt="Synapse Logo"
-                        width={32}
-                        height={32}
-                        className="w-10 h-10 rounded-lg"
+                        width={160}
+                        height={56}
+                        className="h-14 w-auto rounded-lg object-contain"
                     />
-                    <div>
+                    {/* <div>
                         <p className="text-2xl text-white font-poppins font-bold">
                             Synapse
                         </p>
@@ -115,7 +115,7 @@ export default function Navbar() {
                             Platform pembelajaran neuroanestesi untuk pemahaman
                             konseptual dan persiapan praktikum
                         </p>
-                    </div>
+                    </div> */}
                 </div>
                 <div className="flex flex-row gap-8">
                     <Link
