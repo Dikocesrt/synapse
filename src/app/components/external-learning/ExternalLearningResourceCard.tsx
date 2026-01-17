@@ -15,6 +15,8 @@ export default function ExternalLearningResourceCard({
     return (
         <Link
             href={link}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group flex items-center gap-3 bg-white rounded-xl py-4 px-5 shadow-sm border border-gray-100 hover:border-green hover:shadow-md hover:-translate-y-1 transition-all duration-300"
         >
             <Image

@@ -1,15 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "./components/common/Navbar";
-import Footer from "./components/common/Footer";
 import ExternalLearningResourceSection from "./components/external-learning/ExternalLearningResourceSection";
 
 export default function Page() {
     return (
-        <div className="w-full mx-auto">
-            {/* Navbar */}
-            <Navbar />
-
+        <>
             {/* Welcome Section */}
             <div className="relative overflow-hidden bg-gradient-to-br from-purpple to-purpple/80 py-16 lg:py-24 px-6 lg:px-16">
                 <div className="absolute -right-16 top-1/2 -translate-y-1/3 w-1/2 h-full pointer-events-none hidden lg:block">
@@ -129,9 +124,6 @@ export default function Page() {
 
             {/* Sumber Belajar External */}
             <ExternalLearningResourceSection />
-
-            {/* Footer */}
-            <Footer />
-        </div>
+        </>
     );
 }
