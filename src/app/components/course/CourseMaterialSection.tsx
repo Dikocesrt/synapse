@@ -25,7 +25,7 @@ export default function CourseMaterialSection({
                     />
                 </svg>
                 <h2 className="text-2xl font-semibold text-gray-900">
-                    Materi Pembelajaran
+                    Bahan Ajar
                 </h2>
             </div>
             {/* Pertemuan 1-2 */}

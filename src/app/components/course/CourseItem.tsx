@@ -34,7 +34,7 @@ export default function CourseCard({
                     href={`/courses/${id}`}
                     className="block w-full bg-purpple text-white text-center font-semibold py-3 rounded-full hover:bg-purpple/90 transition-colors"
                 >
-                    Lihat RPS
+                    Mulai Belajar
                 </Link>
             </div>
         </div>
