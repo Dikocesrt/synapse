@@ -32,11 +32,11 @@ export default function CourseInformationSection({
                     />
                 </svg>
                 <h2 className="text-2xl font-semibold text-gray-900">
-                    Informasi Mata Kuliah
+                    Overview
                 </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-2 border border-gray-200 rounded-xl p-5 bg-gray-50 hover:border-purpple/30 transition-colors">
                     <p className="text-[14px] font-semibold text-gray-400 uppercase tracking-wide">
                         Mata Kuliah
@@ -51,14 +51,14 @@ export default function CourseInformationSection({
                         {course?.credits} SKS
                     </p>
                 </div>
-                <div className="flex flex-col gap-2 border border-gray-200 rounded-xl p-5 bg-gray-50 hover:border-purpple/30 transition-colors">
+                {/* <div className="flex flex-col gap-2 border border-gray-200 rounded-xl p-5 bg-gray-50 hover:border-purpple/30 transition-colors">
                     <p className="text-[14px] font-semibold text-gray-400 uppercase tracking-wide">
                         DOSEN PENGAMPU
                     </p>
                     <p className="text-gray-800 font-medium">
                         {course?.instructors?.full_name}
                     </p>
-                </div>
+                </div> */}
             </div>
         </div>
     );

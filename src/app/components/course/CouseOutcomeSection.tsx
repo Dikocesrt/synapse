@@ -40,7 +40,7 @@ export default function CourseOutcomeSection({
                     </g>
                 </svg>
                 <h2 className="text-2xl font-semibold text-gray-900">
-                    Capaian Pembelajaran
+                    Objektif
                 </h2>
             </div>
 

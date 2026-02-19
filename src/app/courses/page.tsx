@@ -6,7 +6,7 @@ export default function Page() {
         <main className="py-12 px-6 lg:px-16 bg-gray-50 min-h-screen">
             <div className="text-center mb-10">
                 <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
-                    Materi Pembelajaran
+                    Bahan Ajar
                 </h1>
                 <p className="text-gray-600 max-w-2xl mx-auto">
                     Pilih mata kuliah untuk melihat Rencana Pembelajaran
